@@ -35,13 +35,19 @@ npm test
 ### 3. Deploy the Contract
 Build the contract and deploy it in a testnet account
 ```bash
-npm run deploy
+./deploy.sh
 ```
 
-### 4. Start the Frontend
-Start the web application to interact with your smart contract 
+### 4. Send donation
+
 ```bash
-npm start
+near call flipcoin1.testnet flip_coin '{"player_guess": "heads"}' --accountId yairnava.testnet
+```
+
+## 5. Get donations for account
+
+```bash
+near view flipcoin1.testnet points_of '{"player": "yairnava.testnet"}'
 ```
 
 ---
